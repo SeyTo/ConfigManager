@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<a>
+    <bad_lat val = "b1" val2 = "b2">b-content</bad_lat>
+    <cat val = "c1">c-content</cat>
+    <dad val = "d1">
+        <eat val="1">e-content</eat>
+        <ebo val="1">e-content2</ebo>
+        <eco>e-content</eco>
+        <edo>e-content2</edo>
+        <e2e>e2-content</e2e>
+    </dad>
+</a>
+<!--
+    getConfigTag('b', attr('val','b1') ...)
+    getConfigTag('d', attr('val','d1') ...).getConfigTag('e', attr('val','1'))
+
+    returns the element instead
+-->

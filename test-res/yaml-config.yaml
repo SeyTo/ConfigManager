@@ -1,0 +1,28 @@
+--- #block 1
+Ship : Horizon - PT19
+Launch_Date: "2111-01-01"
+Dimension: "5km * 2km"
+Fire_Power:
+  - type: "1m HellCannon"
+    capacity: 50
+    cell: [R103, R500]
+    officer: ROF192
+  - type: "200mm Bumble Lazer"
+    capacity: 6000
+    cell: [R105, R103, R789, R578]
+    officer: [OF393R, OF394R]
+  - type:
+  # more firepower to be added later
+Rocket_Power: &id001
+  Booster:
+    Name: "Beau-L11 engine"
+  Pulsar:
+    Name: "Boeing-Hardvark 223 engine"
+  Balancer:
+    Name: "Tesla-Klot engine"
+    Quantity: 189
+Officer1:
+  Name: "Lars Volkins"
+  duty: *id001
+
+...

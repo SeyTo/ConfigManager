@@ -1,0 +1,20 @@
+{
+  "id":"id_value",
+  "name":"name_value",
+  "innerObject":
+    [
+      {
+        "id":1,
+        "innerName":11
+      },
+      { "id":2,
+        "innerName":22
+      }
+    ],
+  "maps":
+    {
+      "Key2":"Value2",
+      "Key1":"Value1",
+      "Key3":"Value3"
+    }
+}

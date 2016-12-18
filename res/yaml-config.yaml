@@ -1,0 +1,49 @@
+--- #block 1
+Ship : Horizon - PT19
+Launch_Date: 2111-01-01
+Dimension: 5km * 2km
+Fire_Power:
+  - type: 1m HellCannon
+    capacity: 50
+    cell: [R103, R500]
+    officer: ROF192
+  - type: 200mm Bumble Lazer
+    capacity: 6000
+    cell: [R105, R103, R789, R578]
+    officer: [OF393R, OF394R]
+  - type:
+  # more firepower to be added later
+Rocket_Power: &id001
+  Booster:
+    Name: Beau-L11 engine
+  Pulsar:
+    Name: Boeing-Hardvark 223 engine
+  Balancer:
+    Name: Tesla-Klot engine
+    Quantity: 189
+Maintainance:
+  Officer1:
+    machine: *id001
+
+...
+
+---
+Ship : Chimera - PT19
+Launch_Date: 2106-10-01
+Dimension: 170m * 50m
+Fire_Power:
+  - type: War Gun R90
+    capacity: 50
+    cell: R34
+    officer: ROF19
+  - type: 200mm Bumble Lazer
+    capacity: 100
+    cell: R10
+    officer: ROF19
+Rocket_Power: &id01
+  Booster,Pulsar:
+    Name: Boeing-Hardvark 223 engine
+  Balancer:
+    Name: Tesla-Klot engine
+    Quantity: 10
+...
