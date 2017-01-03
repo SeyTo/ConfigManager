@@ -7,7 +7,7 @@
         <ebo val="1">e-content2</ebo>
         <eco>e-content</eco>
         <edo>e-content2</edo>
-        <e2e>e2-content</e2e>
+        <e2e><ee2>ee3-content</ee2></e2e>
     </dad>
 </a>
 <!--

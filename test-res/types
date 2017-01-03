@@ -1,0 +1,93 @@
+KEY -
+INDEX -
+    numbers or '-1' to represent any, this one is used only while querying.
+    indexPointer are not used with xml. not even the symbol.
+R_VALUE -
+R_OBJECT -
+R_ARRAY -
+
+Json query -
+
+VALUE based
+    1. PhoneNumbers.0.type   <- returns value of type in arrayed indexPointer 0
+    2. PhoneNumbers.-1.type   <- NO-OP, expect Index with a number when no equation is provided.
+    3. PhoneNumbers.-1.type='home'  <- NO-OP, what value to return?
+    4. PhoneNumbers.-1.type='home'.number   <- return value of number where type=given of any array indexPointer
+    5. PhoneNumbers.type='home'.number   <- NO-OP, duplicate keys are not allowed and when found  equation then expect the ancestor
+    to have duplicate keys or an array, which in this case is not allowed in Json syntax.
+    6. coolnumbers.0    <- returns value of whatever is at indexPointer 0, if valid single object exists, else null
+    7. firstName        <- returns value of firstName if the immediately following value is a string, number, null only.
+    8. type='home'...   <- NO-OP,
+
+OBJECT based
+    1. PhoneNumbers.0.  <- returns jsonobject from whatever is found at 0
+    2. PhoneNumbers.-1.  <- NOOP
+    3. PhoneNumbers.-1.number='xxx'.    <- returns jsonobject from condition match of number='xxx' in any array's content.
+    4. PhoneNumbers.-1.type='xxx',number='xxx'. <- returns jsonobject from condition match of both, in any array's content.
+    5. PhoneNumbers.type='xxx,number='xxx'. <- was expecting array and json doesnt allow duplicate keys
+
+R_ARRAY based
+    1. coolnumber.-1     <- returns array containing all values, is error if no array was found
+    2. coolnumber.-1.    <- is invalid. asking for array or object?
+
+
+
+YAML query -
+
+R_VALUE based
+    1. PhoneNumbers.0.type  <- returns value of type in arrayed indexPointer 0
+    2. PhoneNumbers.-1.type  <- NO-OP
+    3. PhoneNumbers.-1.type='home'  <- NO-OP, what value to return?
+    4. PhoneNumbers.-1.type='home'.number   <- returns value of number where type=given from any array indexPointer
+    5. PhoneNumbers.type='home'.number     <-NO-OP, duplicate keys are not allowed in yaml.
+    6. RocketPower.Booster.Name             <- returns value fo Name
+    7. FirePower.-1.type='1m ..',capacity='50'.officer
+    8. FirePower.-1.type='1m ..',capacity='50'.cell.0
+    9. MyClasses.-1.name='bohu'.typs
+
+R_OBJECT based
+    1. MyClasses.0. <- returns object only if the value is of class type (//TODO test)
+    2. MyClasses.-1.name='bohu'.    <- returns object where name='bohu'
+    3. MyClasses.   <- FAILED, its a list, would work if it was a class
+
+R_ARRAY based
+    1. FirePower.type='1m ..',capacity='50'.cell.-1
+    1.
+
+Properties query -
+Xml query -
+
+R_VALUE based
+     1. PhoneNumbers.0.type  <- NO-OP, no arrays in xml
+     2. PhoneNumbers.-1.type  <- NO-OP
+     3. PhoneNumbers.-1.type='home'  <- NO-OP,
+     4. PhoneNumbers.-1.type='home'.number   <- NO-OP
+     5. PhoneNumbers.type='home'.     <- returns content of whichever one has type='home'
+     6. PhoneNumbers.type='home'.p2    <- returns value of attribute 'p2', whichever one has type='home'
+
+R_OBJECT s are not accepted in xml based parsing
+R_ARRAY s are not accepted in xml based parsing
+
+How to parse?
+
+json parsing
+
+1. tokenize each element
+- start collecting by characters into a string
+- if found '.' or EOL then
+    check if it is a number -1 if yes then {
+        store as indexPointer until ';' or EOL is discovered
+    }
+    check if it is '-1', then {
+        store as indexPointer as -1 until ';' or EOL is discovered
+    }
+    check if it has '=', then {
+        store
+    }
+    else {
+        add the string as KEY
+    }
+if
+
+stream through each element
+2.

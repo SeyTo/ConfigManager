@@ -1,0 +1,5 @@
+./test-res/json-config.json
+./test-res/properties-config.properties
+./test-res/properties-xml-config.xml
+./test-res/xml-config.xml
+./test-res/yaml-config.yaml

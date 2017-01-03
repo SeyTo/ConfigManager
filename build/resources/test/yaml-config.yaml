@@ -1,4 +1,37 @@
---- #block 1
+# Officer1.duty
+--- # block 2
+PhoneNumbers :
+  - type: "home"
+    number: "212 555-1234"
+  - type: "office"
+    number: "646 555 4567"
+  - type: "mobile"
+    number: "123 456-7890"
+coolnumbers:
+  - "home"
+  - "office"
+  - "mobile"
+ClassYsj : {
+  name: "Ryu",
+  age: "34"
+}
+MyClasses :
+  - {
+    name: "bohu",
+    typs: "integer"
+  }
+  - {
+    name: "kyotlr",
+    typs: "vals"
+  }
+Rocket_Power: &id001
+  Booster:
+    Name: "Beau-L11 engine"
+  Pulsar:
+    Name: "Boeing-Hardvark 223 engine"
+  Balancer:
+    Name: "Tesla-Klot engine"
+    Quantity: 189
 Ship : Horizon - PT19
 Launch_Date: "2111-01-01"
 Dimension: "5km * 2km"
@@ -13,16 +46,6 @@ Fire_Power:
     officer: [OF393R, OF394R]
   - type:
   # more firepower to be added later
-Rocket_Power: &id001
-  Booster:
-    Name: "Beau-L11 engine"
-  Pulsar:
-    Name: "Boeing-Hardvark 223 engine"
-  Balancer:
-    Name: "Tesla-Klot engine"
-    Quantity: 189
 Officer1:
   Name: "Lars Volkins"
   duty: *id001
-
-...

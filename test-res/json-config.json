@@ -1,0 +1,43 @@
+{
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "212 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "646 555-4567"
+    },
+    {
+      "type": "mobile",
+      "number": "123 456-7890"
+    }
+  ],
+  "coolnumbers": [
+      "home",
+      "office",
+      "mobile"
+  ],
+  "firstName": "John",
+  "wallrosa": {
+    "wallmaria": {
+      "wallsina" : "rich people",
+      "wallsina2": "poor people"
+    }
+  },
+  "address": {
+    "streetAddress": "21 2nd Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "10021-3100"
+  },
+
+  "lastName": "Smith",
+  "isAlive": true,
+
+  "age": 25,
+
+  "children": [],
+  "spouse": null
+}
+

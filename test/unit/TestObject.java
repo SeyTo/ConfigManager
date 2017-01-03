@@ -1,5 +1,6 @@
 package unit;
 
+import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -11,6 +12,9 @@ public class TestObject {
     private String name;
     private InnerObject[] innerObject;
     private Map<String, String> maps;
+
+    public TestObject() {
+    }
 
     public TestObject(String id, String name, InnerObject[] innerObject, Map<String, String> maps) {
         this.id = id;
@@ -33,6 +37,16 @@ public class TestObject {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "TestObject{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", innerObject=" + Arrays.toString(innerObject) +
+                ", maps=" + maps +
+                '}';
     }
 }
 
@@ -59,5 +73,13 @@ class InnerObject {
 
     public void setInnerName(int innerName) {
         this.innerName = innerName;
+    }
+
+    @Override
+    public String toString() {
+        return "InnerObject{" +
+                "id=" + id +
+                ", innerName=" + innerName +
+                '}';
     }
 }

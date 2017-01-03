@@ -34,6 +34,7 @@ public class YAMLTest {
         node.forEach(new BiConsumer<Object, Object>() {
             @Override
             public void accept(Object s, Object s2) {
+
                 System.out.println("key > " + s);
                 System.out.println("value > " + s2);
             }

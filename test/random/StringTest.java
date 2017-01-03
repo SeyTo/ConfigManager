@@ -9,10 +9,17 @@ public class StringTest {
 
     @Test
     public void isEmptyByContext() throws Exception {
-        String val = "\nHello\n   ";
-        System.out.println(val);
-            val = val.trim();
-            if (val.startsWith("<") || val.endsWith(">")) System.out.println(false);
-
+        MyClass val = new MyClass();
+        method(val);
+        System.out.println(val.a);
     }
+
+    private void method(MyClass val) {
+        val.a = 10;
+    }
+
+    class MyClass {
+        int a = 0;
+    }
+
 }

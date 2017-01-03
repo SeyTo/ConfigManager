@@ -24,7 +24,8 @@ Rocket_Power: &id001
 Maintainance:
   Officer1:
     machine: *id001
-
+Mapper: value1
+Mapper: value2
 ...
 
 ---
@@ -46,4 +47,5 @@ Rocket_Power: &id01
   Balancer:
     Name: Tesla-Klot engine
     Quantity: 10
+MyClass: !myclass { name: no12, age: 15 }
 ...

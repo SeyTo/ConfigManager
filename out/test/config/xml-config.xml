@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<all>
+    <PhoneNumbers type = "home" p2="colo">983217123</PhoneNumbers>
+    <PhoneNumbers type="office" p2="bolo">812397912</PhoneNumbers>
+    <PhoneNumbers type="mobile" p2="ptolo">123241252</PhoneNumbers>
+    <cat val = "c1">c-content</cat>
+    <dad val = "d1">
+        <eat val="1">e-content</eat>
+        <ebo val="1">e-content2</ebo>
+        <eco>e-content</eco>
+        <edo>e-content2</edo>
+        <e2e><ee2>ee3-content</ee2></e2e>
+    </dad>
+</all>
+<!--
+    getConfigTag('b', attr('val','b1') ...)
+    getConfigTag('d', attr('val','d1') ...).getConfigTag('e', attr('val','1'))
+
+    returns the element instead
+-->

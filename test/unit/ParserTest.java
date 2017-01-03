@@ -1,19 +1,17 @@
 package unit;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.rjj.config.parser.ParserFactory;
-import org.rjj.config.parser.XMLParser;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import org.rjj.config.selectors.*;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -26,6 +24,7 @@ public class ParserTest {
     private String propertiesConfigPath;
     private String propertiesConfigXMLPath;
     private String xmlConfigPath;
+    private String yamlConfigPath;
 
 
     @Before
@@ -34,6 +33,7 @@ public class ParserTest {
         propertiesConfigPath = "./res/properties-config.properties";
         propertiesConfigXMLPath = "./res/properties-xml-config.xml";
         xmlConfigPath = "./res/xml-config.xml";
+        yamlConfigPath = "./test-res/yaml-config.yaml";
     }
 
     @Ignore ("Impartial Test")
@@ -73,35 +73,8 @@ public class ParserTest {
         properties.storeToXML(new FileOutputStream(propertiesConfigXMLPath), "");
     }
 
-    @Test
-    public void jsonTest() throws Exception{
-        Properties properties = new Properties();
-        ParserFactory.get().parse(new File(jsonConfigPath), properties);
-        System.out.println(properties); //TODO complete
-    }
 
-    @Test
-    public void yamlTest() throws Exception {
 
-    }
-
-    @Test
-    public void xmlTest() throws Exception {
-        Properties properties = new Properties();
-        XMLParser parser = new XMLParser(new File(xmlConfigPath));
-        parser.look("bad_lat", XMLParser.Attr.__("val", "b1"), XMLParser.Attr.__("val2", "b2")).getSimilar();//.look("e", XMLParser.Attr.__("val", "1")).getRoot();
-        System.out.println(parser.getSimilar());
-        //parser.lookForAll();
-        //System.out.println(parser.getAll());
-    }
-
-    @Test
-    public void propertiesTest() throws Exception {
-        Properties properties = new Properties();
-        properties.put("Extra", "ExtraV");
-        ParserFactory.get().parse(new File(propertiesConfigPath), properties);
-        System.out.println(properties);
-    }
 }
 
 /*
